@@ -80,3 +80,78 @@ function alertTweetable(text) {
 }
 
 alertTweetable('Looks Good to Me!!');
+
+
+
+// 関数式
+// 匿名関数 / 無名関数
+const isTweetabl2 = function (text) {
+  return text.length <= 140;
+};
+console.log(isTweetable2('foo-!'));
+
+
+// 高階関数を使った処理
+function washed(fn) {
+
+}
+
+
+
+// 実践やで
+function unFollow() {
+  console.log('フォローを外しました');
+}
+
+function cancelTweet() {
+  console.log('ツイートをキャンセルしました');
+}
+
+const cancelTweet2 = function () {
+  console.log('ツイートをキャンセルしました');
+}
+
+function confirmed(fn) {
+  if (window.confirm('実行しますか？')) {
+    fn();
+  }
+}
+
+confirmed(unFollow);
+
+
+
+function confirmed2(fn) {
+  const input = window.prompt('実行しますか？');
+  if (input === '実行') {
+    fn();
+  }
+}
+
+confirmed2(function () {
+  console.log('リポジトリを削除');
+});
+
+function confirmed(fn) {
+  const input2 = window.prompt('実行しますか？');
+  fn(input);
+}
+
+confirmed(function (input) {
+  if (input === '実行') {
+    console.log('リポジトリを削除');
+  }
+});
+
+
+
+const btn = document.getElementById('button');
+btn.addEventListener('click', function () {
+  console.log('フォロー解除');
+});
+
+const foods = ['にんじん', 'じゃがいも', '玉ねぎ'];
+
+foods.forEach(function (food) {
+  console.log(food);
+});
