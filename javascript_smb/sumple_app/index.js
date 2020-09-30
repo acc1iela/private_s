@@ -32,8 +32,6 @@
 //   // }
 // });
 
-
-
 // // windowが読み込まれた瞬間に表示
 // window.addEventListener('load', async function () {
 //   // データのやり取り
@@ -48,13 +46,6 @@
 //     lists.appendChild(list);
 //   });
 // });
-
-
-
-
-
-
-
 
 // リファクタ
 // const button = document.getElementById('addBtn');
