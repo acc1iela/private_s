@@ -15,7 +15,7 @@ const btnHold = document.querySelector('.btn--hold');
 let scores, currentScore, activePlayer, playing;
 
 // 初期化関数
-const init = (() => {
+const init = () => {
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 0;
@@ -29,4 +29,14 @@ const init = (() => {
   dice.classList.add('hidden');
   firstPlayer.classList.remove('player--winner').add('player--active');
   secondPlayer.classList.remove('player--winner player--active');
-})();
+};
+init();
+
+// プレイヤー変更
+const switchPlayer = () => {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  firstPlayer.classList.toggle('player--active');
+  secondPlayer.classList.toggle('player--active');
+};
