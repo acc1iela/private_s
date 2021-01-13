@@ -169,3 +169,9 @@ main {
 .hidden {
   display: none;
 }
+
+.caution-content {
+  position: absolute;
+  bottom: 1.5vw;
+  right: 1vw;
+}

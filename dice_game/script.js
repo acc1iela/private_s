@@ -9,7 +9,7 @@ const secondCurrentScore = document.getElementById('current--1');
 
 const dice = document.querySelector('.dice');
 const restart = document.querySelector('.btn--new');
-const btnRoll = document.querySelector('.btn-roll');
+const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
 let scores, currentScore, activePlayer, playing;
@@ -27,8 +27,9 @@ const init = () => {
   firstCurrentScore.textContent = 0;
 
   dice.classList.add('hidden');
-  firstPlayer.classList.remove('player--winner').add('player--active');
-  secondPlayer.classList.remove('player--winner player--active');
+  firstPlayer.classList.remove('player--winner');
+  secondPlayer.classList.remove('player--winner', 'player--active');
+  firstPlayer.classList.add('player--active');
 };
 init();
 
@@ -40,3 +41,43 @@ const switchPlayer = () => {
   firstPlayer.classList.toggle('player--active');
   secondPlayer.classList.toggle('player--active');
 };
+
+// サイコロコロ
+btnRoll.addEventListener('click', () => {
+  if (playing) {
+    const diceNum = Math.trunc(Math.random() * 6) + 1;
+
+    dice.classList.remove('hidden');
+    dice.src = `dice-${diceNum}.png`; // 1~6の数字に応じて画像が表示される
+
+    if (diceNum !== 1) {
+      currentScore += diceNum;
+      document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+    } else {
+      switchPlayer(); // もし数字が1ならアクティブプレイヤーが入れ替わる
+    }
+  }
+});
+
+btnHold.addEventListener('click', () => {
+  if (playing) {
+    // 現在のスコアをアクティブプレイヤーに追加
+    scores[activePlayer] += currentScore;
+
+    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+
+    // スコアがクリア値に達したかどうか
+    if (scores[activePlayer] >= 50) {
+      // ゲーム終了：）
+      playing = false;
+      dice.classList.add('hidden');
+
+      document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+      document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+    } else {
+      switchPlayer();
+    }
+  }
+});
+
+restart.addEventListener('click', init);
