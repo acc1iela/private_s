@@ -24,7 +24,7 @@ const init = () => {
   firstPlayerScore.textContent = 0;
   secondPlayerScore.textContent = 0;
   firstCurrentScore.textContent = 0;
-  firstCurrentScore.textContent = 0;
+  secondCurrentScore.textContent = 0;
 
   dice.classList.add('hidden');
   firstPlayer.classList.remove('player--winner');
