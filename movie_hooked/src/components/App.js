@@ -79,7 +79,7 @@ const App = () => {
     <div className="App">
       <Header text="Movie Search!" />
       <Search search={search} />
-      <p className="App-intro">何か映画を検索してみてね🙂</p>
+      <p className="App-intro">何か映画を検索してみてね</p>
       <div className="movies">
         {loading && !errorMessage ? (
           <span>loading... </span>
