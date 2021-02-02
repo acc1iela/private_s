@@ -4,13 +4,27 @@ import Article from './Article';
 class Blog extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isPublished: false,
+    };
   }
+
+  // 公開状態を反転させる関数
+  togglePublished = () => {
+    this.setState({
+      isPublished: !this.state.isPublished,
+    });
+  };
+
   render() {
-    const authorName = 'Accio';
     return (
-      <div>
-        <Article title={'hoge'} order={3} isPublished={true} author={authorName} />
-      </div>
+      <>
+        <Article
+          title={'Reactの使い方'}
+          isPublished={this.state.isPublished}
+          toggle={() => this.togglePublished()}
+        />
+      </>
     );
   }
 }

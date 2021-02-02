@@ -10,9 +10,8 @@ const Article = (props) => {
   return (
     <div>
       <h2>{props.title}</h2>
-      <p>順番は{props.order}です。</p>
-      <p>著書：{props.author}</p>
-      <p>{publishState}</p>
+      <label htmlFor="check">公開状態：</label>
+      <input type="checkbox" cheked={props.isPublished} id="check" onClick={() => props.toggle()} />
     </div>
   );
 };
