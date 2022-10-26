@@ -1,10 +1,16 @@
-import "./Child.css";
+import './Child.css';
+import React from 'react';
+//  import { Fragment } from 'react';
 
 const Child = () => {
   return (
-    <div className="component">
+    <React.Fragment>
+      <div className="component">
+        <h3>Hello Component</h3>
+      </div>
       <h3>Hello Component</h3>
-    </div>
+      <p>テスト</p>
+    </React.Fragment>
   );
 };
 
