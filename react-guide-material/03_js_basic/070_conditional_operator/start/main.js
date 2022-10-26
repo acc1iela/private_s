@@ -1,12 +1,12 @@
 // 三項演算子（ ? : ）
 
 const a = true;
-let resultA;
+let resultA = a ? 'true' : 'false';
 
-if(a) {
-  resultA = "true";
+if (a) {
+  resultA = 'true';
 } else {
-  resultA = "false";
+  resultA = 'false';
 }
 console.log(resultA);
 
