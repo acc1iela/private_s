@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 const Bye = () => {
-      return <h2>GoodBye!</h2>;
-}
+  return <h2>GoodBye!</h2>;
+};
 
 const Example = () => {
   return (
     <div>
-      <Bye/>
+      <Bye />
     </div>
   );
 };
@@ -16,3 +16,4 @@ console.log(Example());
 
 export default Example;
 
+w;
