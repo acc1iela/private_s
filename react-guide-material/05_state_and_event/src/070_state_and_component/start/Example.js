@@ -2,7 +2,17 @@ import { useState } from 'react';
 
 const Example = () => {
   const [toggle, setToggle] = useState(true);
-  return <>{tooggle ? <Count title="A" /> : <Count title="B" />}</>;
+  const toggleComponent = () => {
+    setToggle((prev) => !prev);
+  };
+  return (
+    <>
+      <button onClick={toggleComponent}>toggle</button>
+      {toggle ? <Count key="A" title="A" /> : <Count key="B" title="B" />}
+    </>
+  );
+  // Reactはツリー構造が変わらない限りはステートの値を保持し続ける
+  // コンポーネントのReact要素ツリーにおける位置が変わらない場合はstateは保持される
 };
 
 const Count = ({ title }) => {
