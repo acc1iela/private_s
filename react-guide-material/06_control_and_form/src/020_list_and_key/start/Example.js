@@ -1,5 +1,4 @@
-
-const animals = ["Dog", "Cat", "Rat"];
+const animals = ['Dog', 'Cat', 'Rat'];
 
 const Example = () => {
   const animalList = [];
@@ -20,11 +19,13 @@ const Example = () => {
         {/* {animalList}
         {helloAnimals} */}
         {/* {animalList} */}
-
-        {animals.map((animal) => <li>Hello, {animal}</li>)}
+        {animals.map((animal) => (
+          <li>Hello, {animal}</li>
+        ))}
       </ul>
     </>
   );
 };
+/* 配列には基本的にkeyプロパティをつけたほうがいい warningが表示される  */
 
 export default Example;
