@@ -1,17 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const Example = () => {
-  const animals = ["Dog", "Cat", "Rat"];
+  const animals = ['Dog', 'Cat', 'Rat'];
 
-  const [filterVal, setFilterVal] = useState("");
+  const [filterVal, setFilterVal] = useState('');
 
   return (
     <>
-      <input
-        type="text"
-        value={filterVal}
-        onChange={(e) => setFilterVal(e.target.value)}
-      />
+      <input type="text" value={filterVal} onChange={(e) => setFilterVal(e.target.value)} />
       <ul>
         {animals
           .filter((animal) => {
@@ -19,9 +15,14 @@ const Example = () => {
             console.log(animal.indexOf(filterVal));
             return isMatch;
           })
-          .map((animal) => (
-            <li key={animal}>{animal}</li>
-          ))}
+          .map((animal) => {
+            return <li key={animal}>{animal === 'Dog' ? animal + '★' : animal}</li>;
+            // if (animal === 'Dog') {
+            // return <li key={animal}>{animal}★</li>;
+            // } else {
+            //   return <li key={animal}>{animal}</li>;
+            // }
+          })}
       </ul>
     </>
   );
