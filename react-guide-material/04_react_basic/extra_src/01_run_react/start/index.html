@@ -6,11 +6,14 @@
    <script src="/libs/babel-standalone.js"></script>
 </head>
 <body>
-  <div id="app"></div>
+  <div id='app'></div>
   <script type="text/babel">
     const appEl = document.querySelector('#app');
-    const root = ReactDom.createRoot(appEl);
-    root.render('こんちゃっすー');
+    const root = ReactDOM.createRoot(appEl);
+    root.render(<h1>こんにちは</h1>);
+
+    // 18以前の書き方
+    ReactDOM.render(<h1>こんにちは</h1>, appEl);
   </script>
 </body>
 </html>
