@@ -1,17 +1,14 @@
 import './Child.css';
 import React from 'react';
-//  import { Fragment } from 'react';
 
 const Child = () => {
   return (
     <React.Fragment>
+      {' '}
       <div className="component">
-        <h3>Hello Component</h3>
+        <h2>Hello</h2>
       </div>
-      <h3>Hello Component</h3>
-      <p>テスト</p>
+      <p>test</p>
     </React.Fragment>
   );
 };
-
-export default Child;
