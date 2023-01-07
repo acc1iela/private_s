@@ -7,12 +7,10 @@ const Example = () => {
       <input
         type="text"
         onChange={(e) => {
-          setVal(e.target.val);
+          setVal(e.target.value);
         }}
       />{' '}
       = {val}
     </>
   );
 };
-
-export default Example;
