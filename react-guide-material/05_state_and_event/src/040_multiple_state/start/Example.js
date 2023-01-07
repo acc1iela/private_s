@@ -1,16 +1,33 @@
 import { useState } from 'react';
 
 const Example = () => {
-  const [count, setCount] = useState();
+  const [countA, setCountA] = useState(0);
+  const [countB, setCountB] = useState(10);
+  const [countC, setCountC] = useState(100);
   return (
     <>
-      <p>このボタンは{count}回クリックされました</p>
+      <p>ボタンAを{}回押しました！</p>
       <button
         onClick={() => {
-          setCount(count + 1);
+          setCountA(countA + 1);
         }}
-      />
-      test
+      >
+        countAボタン
+      </button>
+      <button
+        onClick={() => {
+          setCountB(countB + 1);
+        }}
+      >
+        countBボタン
+      </button>
+      <button
+        onClick={() => {
+          setCountC(countC + 1);
+        }}
+      >
+        countCボタン
+      </button>
     </>
   );
 };
