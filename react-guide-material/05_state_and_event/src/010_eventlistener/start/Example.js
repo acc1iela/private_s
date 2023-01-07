@@ -1,11 +1,13 @@
 const Example = () => {
   const clickHandler = () => {
-    alert('クリックされました');
+    alert('ボタンがクリックされました');
   };
+  const hello = () => 'hello';
   return (
     <>
       <button onClick={clickHandler}>クリックしてね</button>
-      <button>クリックしてね</button>
+      <button>クリック</button>
+      {hello()}
     </>
   );
 };
