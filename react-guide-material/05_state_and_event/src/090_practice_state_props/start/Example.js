@@ -4,11 +4,12 @@ const Example = () => {
   const [count, setCount] = useState(0);
   return (
     <>
-      <CountResult title="カウント" count={count} />
-      <CountUpdate setCount={setCount} />
+      <CountResult title="カウント" count={count}></CountResult>
+      <CountUpdate setCount={setCount}></CountUpdate>
     </>
   );
 };
+
 const CountResult = ({ title, count }) => (
   <h3>
     {title}: {count}
@@ -19,15 +20,7 @@ const CountUpdate = ({ setCount }) => {
   const countUp = () => {
     setCount((prev) => prev + 1);
   };
-  const countDown = (setCount) => {
+  const countDown = () => {
     setCount((prev) => prev - 1);
   };
-  return (
-    <>
-      <button onClick={countUp}>+</button>
-      <button onClick={countDown}>-</button>
-    </>
-  );
 };
-
-export default Example;
