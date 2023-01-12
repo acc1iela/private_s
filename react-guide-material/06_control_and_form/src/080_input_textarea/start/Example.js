@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const Example = () => {
   const [val, setVal] = useState('');
   const clearVal = () => setVal('');
