@@ -1,8 +1,4 @@
-import AnimalItem from './AnimalItem';
-const AnimalList = ({ animals }) => {
-  if (animals.length === 0) {
-    return <h3>アニマルが見つかりません</h3>;
-  }
+const AnimalList = () => {
   return (
     <ul>
       {animals
@@ -11,7 +7,12 @@ const AnimalList = ({ animals }) => {
           return isMatch;
         })
         .map((animal) => {
-          return <AnimalItem animal={animal} key={animal} />;
+          return (
+            <li key={animal}>
+              {animal}
+              {animal === 'Dog' && '★'}
+            </li>
+          );
         })}
     </ul>
   );

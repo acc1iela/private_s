@@ -1,10 +1,9 @@
 const animals = ['Dog', 'Cat', 'Rat'];
 
 const Example = () => {
-
   const animalList = [];
   for (const animal of animals) {
-    animalList.push(<li>{animal>}</li>)
+    animalList.push(<li>{animal}</li>);
   }
   const helloAnimal = animals.map((animal) => <li>Hello, {animal}</li>);
   return (

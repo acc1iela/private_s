@@ -10,11 +10,7 @@ const Example = () => {
       <input type="text" value={filterVal} onChange={(e) => setFilterVal(e.target.value)}></input>
       <ul>
         {animals
-          .filter((animal) => {
-            const isMatch = animal.indexOf(filterVal) !== 1;
-            console.log(isMatch);
-            return isMatch;
-          })
+          .filter((animal) => animal.indexof(filterVal) !== -1)
           .map((animal) => (
             <li key={animal}>{animal}</li>
           ))}
@@ -22,5 +18,3 @@ const Example = () => {
     </>
   );
 };
-
-export default Example;

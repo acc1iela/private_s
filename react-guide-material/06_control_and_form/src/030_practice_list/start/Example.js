@@ -1,6 +1,6 @@
 import Profile from './components/Profile';
 
-const person = [
+const persons = [
   {
     name: 'Geo',
     age: 18,
