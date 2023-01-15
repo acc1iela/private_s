@@ -19,13 +19,6 @@ const Example = () => {
 
     setFruits(newFruits);
 
-    //    let sumVal = 0;
-    // newFruits.forEach((fruit) => {
-    //   if (fruit.checked) {
-    //     sumVal += fruit.value;
-    //   }
-    // });
-    // 違う書き方
     //newFruits.filter((fruit) => fruit.checked).forEach((fruit) => (sumVal = sumVal + fruit.value));
 
     let sumVal = newFruits
