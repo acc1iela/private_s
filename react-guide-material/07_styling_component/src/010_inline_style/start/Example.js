@@ -15,6 +15,10 @@ const Example = () => {
     border: 'none',
     margin: 'auto',
     background: isSelected ? 'pink' : '',
+    // ::before, ::after, :hover, :active
+    // @media (min-width: 600px) {}
+    //　インライン指定できないものは基本的には使用できない
+    // パフォーマンス的にもあまり良くない
   };
 
   return (
@@ -22,6 +26,7 @@ const Example = () => {
       <button onClick={clickHandler} style={style}>
         ボタン
       </button>
+      <button style={style}>ボタン２</button>
       <div style={{ textAlign: 'center' }}>{isSelected && 'クリックされました。'}</div>
     </>
   );
