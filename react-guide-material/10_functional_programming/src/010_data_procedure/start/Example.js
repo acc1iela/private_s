@@ -13,6 +13,7 @@ const Example = () => {
 
   const nums = [1, 2, 3];
   const sum = (arry) => arry.reduce((accu, curr) => accu + curr);
+  const sum2 = (arry) => arry.reduce((accu, curr) => accu + curr);
   return (
     <>
       <h3>状態管理と処理を分離</h3>
