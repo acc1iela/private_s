@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer, useState } from 'react';
 
 // useState:状態の更新の仕方は利用側に託す。
 // useReducer:状態の更新の仕方も状態側で担当する。
@@ -11,31 +11,32 @@ import { useReducer, useState } from "react";
 // 特定の引数に特定の戻り値
 const reducer = (prev, { type, step }) => {
   switch (type) {
-    case "+":
+    case '+':
       return prev + step;
-    case "-":
+    case '-':
       return prev - step;
     default:
-      throw new Error('不明なactionです。')
+      throw new Error('不明なactionです。');
   }
-}
+};
 
 // 不変性（Immutability）
 const Example = () => {
   const [state, setState] = useState(0);
   const [rstate, dispatch] = useReducer(reducer, 0);
-  
+
   const step = 2;
   const countUp = () => {
+    //    const step = 2;
     setState((prev) => {
-      return prev + step
+      return prev + step;
     });
   };
   const rcountUp = () => {
-    dispatch({ type: "+", step: 2 });
+    dispatch({ type: '+', step: 2 });
   };
   const rcountDown = () => {
-    dispatch({ type: "-", step: 3 });
+    dispatch({ type: '-', step: 3 });
   };
   return (
     <>
