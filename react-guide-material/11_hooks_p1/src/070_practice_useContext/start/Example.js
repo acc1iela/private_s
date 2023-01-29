@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import Input from './components/Input';
-
-const CALC_OPTIONS = ['add', 'minus', 'divide', 'multiply'];
+import Select from './components/Select';
+import Result from './components/Result';
 
 const reducer = (state, { type, payload }) => {
   switch (type) {
@@ -35,10 +35,6 @@ const Example = () => {
 
   const [state, dispatch] = useReducer(reducer, initState);
 
-  const calculate = (e) => {
-    dispatch({ type: e.target.value });
-  };
-
   return (
     /* 完成系のJSX */
     // <CalcProvider>
@@ -52,22 +48,10 @@ const Example = () => {
       <p>
         Example内のコードをコンポーネントに分割してください。また、ステートはContext経由でやり取りしてください。
       </p>
-      <div>
-        a:
-        <input type="number" name="a" value={state.a} onChange={numChangeHandler} />
-      </div>
-      <div>
-        b:
-        <input type="number" name="b" value={state.b} onChange={numChangeHandler} />
-      </div>
-      <select value={state.type} name="type" onChange={calculate}>
-        {CALC_OPTIONS.map((type) => (
-          <option key={type} value={type}>
-            {type}
-          </option>
-        ))}
-      </select>
-      <h3>結果：{state.result}</h3>
+      <Input name="a" />
+      <Input name="b" />
+      <Select />
+      <Result />
     </>
   );
 };
