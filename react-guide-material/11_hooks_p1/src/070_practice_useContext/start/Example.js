@@ -1,4 +1,5 @@
 import { useReducer } from 'react';
+import Input from './components/Input';
 
 const CALC_OPTIONS = ['add', 'minus', 'divide', 'multiply'];
 
@@ -37,9 +38,7 @@ const Example = () => {
   const calculate = (e) => {
     dispatch({ type: e.target.value });
   };
-  const numChangeHandler = (e) => {
-    dispatch({ type: 'change', payload: { name: e.target.name, value: e.target.value } });
-  };
+
   return (
     /* 完成系のJSX */
     // <CalcProvider>
