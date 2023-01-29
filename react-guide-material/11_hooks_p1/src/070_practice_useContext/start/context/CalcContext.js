@@ -17,7 +17,7 @@ const reducer = (state, { type, payload }) => {
       return { ...state, [name]: value };
     }
     case 'add': {
-      return { ...state, result: state.a + state.b };
+      return { ...state, result: parseInt(state.a) + parseInt(state.b) };
     }
     case 'minus': {
       return { ...state, result: state.a - state.b };
