@@ -9,6 +9,7 @@ const Item = ({ todo, complete, updateTodo }) => {
 
   const toggleEditMode = () => {
     const newTodo = { ...todo, editing: !todo.editing };
+    updateTodo(newTodo);
   };
 
   return (

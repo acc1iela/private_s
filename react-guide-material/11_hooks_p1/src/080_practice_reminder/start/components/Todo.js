@@ -39,7 +39,7 @@ const Todo = () => {
     const newTodos = todos.map((_todo) => {
       return _todo.id === todo.id ? { ..._todo, ...todo } : { ..._todo };
     });
-    return newTodos;
+    setTodos(newTodos);
   };
 
   return (
