@@ -35,9 +35,16 @@ const Todo = () => {
     setTodos([...todos, todo]);
   };
 
+  const updateTodo = (todo) => {
+    const newTodos = todos.map((_todo) => {
+      return _todo.id === todo.id ? { ..._todo, ...todo } : { ..._todo };
+    });
+    return newTodos;
+  };
+
   return (
     <>
-      <List todos={todos} deleteTodo={deleteTodo} />
+      <List todos={todos} deleteTodo={deleteTodo} updateTodo={updateTodo} />
       <Form createTodo={createTodo} />
     </>
   );

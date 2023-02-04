@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Item = ({ todo, complete }) => {
+const Item = ({ todo, complete, updateTodo }) => {
   const [editingContent, setEditingContent] = useState(todo.content);
 
   const changeContent = (e) => {
