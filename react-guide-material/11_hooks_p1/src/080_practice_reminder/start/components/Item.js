@@ -21,7 +21,7 @@ const Item = ({ todo, complete, updateTodo }) => {
   return (
     <div key={todo.id}>
       <button onClick={() => complete(todo.id)}>完了</button>
-      <form onSubmit={confirmContent}>
+      <form onSubmit={confirmContent} style={{ display: 'inline' }}>
         {todo.editing ? (
           <input type="text" value={editingContent} onChange={changeContent} />
         ) : (
