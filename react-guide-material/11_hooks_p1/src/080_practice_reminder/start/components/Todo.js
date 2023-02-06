@@ -5,8 +5,8 @@ import { TodoProvider } from '../context/TodoContext';
 const Todo = () => {
   return (
     <TodoProvider>
-      <List todos={todos} deleteTodo={deleteTodo} updateTodo={updateTodo} />
-      <Form createTodo={createTodo} />
+      <List />
+      <Form />
     </TodoProvider>
   );
 };

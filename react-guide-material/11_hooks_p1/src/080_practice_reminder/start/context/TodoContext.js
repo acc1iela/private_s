@@ -31,7 +31,7 @@ const todoReducer = (todos, action) => {
       });
     case 'todo/update':
       return todos.map((_todo) => {
-        return _todo.id === todo.id ? { ..._todo, ...todo } : { ..._todo };
+        return _todo.id === action.todo.id ? { ..._todo, ...action.todo } : { ..._todo };
       });
     default:
       return todos;
@@ -48,6 +48,6 @@ const TodoProvider = ({ children }) => {
 };
 
 const useTodos = useContext(TodoContext);
-const useDispatchTodos = useContext(TodoDispatchContext);
+const useDispatchTodos = () => useContext(TodoDispatchContext);
 
 export { useTodos, useDispatchTodos, TodoProvider };
