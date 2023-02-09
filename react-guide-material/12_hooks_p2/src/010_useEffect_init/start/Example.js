@@ -8,6 +8,10 @@ const Example = () => {
       setTime((prev) => prev + 1);
     }, 1000);
   }, []);
+
+  useEffect(() => {
+    console.log('update');
+  }, [time]);
   return (
     <>
       <h3>
