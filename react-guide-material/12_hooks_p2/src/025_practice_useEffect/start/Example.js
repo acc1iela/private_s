@@ -1,6 +1,17 @@
 import { useState } from 'react';
 
 const Example = () => {
+  const [isDisp, setIsDisp] = useState(true);
+
+  return (
+    <>
+      {isDisp && <Timer />}
+      <button onClick={() => setIsDisp((prev) => !prev)}>トグル</button>
+    </>
+  );
+};
+
+const Timer = () => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
