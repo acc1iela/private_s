@@ -1,13 +1,11 @@
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 
 const Example = () => {
   const [state, setState] = useState(0);
   const [rstate, dispatch] = useReducer((prev) => ++prev, 0);
 
   const countUp = () => {
-    setState((prev) => {
-      return (prev) => ++prev;
-    });
+    setState((prev) => ++prev);
   };
 
   const rcoutUp = () => {
@@ -18,11 +16,11 @@ const Example = () => {
     <>
       <div>
         <h3>{state}</h3>
-        <button onClick={countUp}></button>
+        <button onClick={countUp}>CountUp</button>
       </div>
       <div>
         <h3>{rstate}</h3>
-        <button onClick={rcoutUp}></button>
+        <button onClick={rcoutUp}>CountUp</button>
       </div>
     </>
   );
