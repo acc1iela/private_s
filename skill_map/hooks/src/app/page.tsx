@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { ThemeProvider } from '../../contexts/themeContext'
-import ThemeToggleButton from '../../components/toggleButton'
+import { ThemeProvider } from '../../contexts/themeContext.client'
+import ThemeToggleButton from '../../components/toggleButton.client'
 
 export default function Home() {
   return (
