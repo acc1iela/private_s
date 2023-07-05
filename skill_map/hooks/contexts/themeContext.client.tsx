@@ -1,4 +1,4 @@
-// ThemeContext.tsx
+"use client"
 import React, { createContext, useState, useContext, FunctionComponent, ReactNode } from 'react';
 
 type Theme = 'light' | 'dark';
