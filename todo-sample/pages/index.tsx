@@ -1,7 +1,7 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.css';
 
 type Todo = {
   id: number;
@@ -25,9 +25,7 @@ const TodoApp: React.FC = () => {
   };
 
   const markTodo = (id: number) => {
-    setTodos(
-      todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo))
-    );
+    setTodos(todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo)));
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -48,8 +46,10 @@ const TodoApp: React.FC = () => {
       </form>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id} className={`todo-item ${todo.done ? "done" : ""}`}>
-            <span className='todo-item-text' onClick={() => markTodo(todo.id)}>{todo.text}</span>
+          <li key={todo.id} className={`todo-item ${todo.done ? 'done' : ''}`}>
+            <span className="todo-item-text" onClick={() => markTodo(todo.id)}>
+              {todo.text}
+            </span>
             <button className="delete" onClick={() => deleteTodo(todo.id)}>
               Delete
             </button>
