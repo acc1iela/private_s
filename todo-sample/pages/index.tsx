@@ -49,7 +49,7 @@ const TodoApp: React.FC = () => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id} className={`todo-item ${todo.done ? "done" : ""}`}>
-            <span onClick={() => markTodo(todo.id)}>{todo.text}</span>
+            <span className='todo-item-text' onClick={() => markTodo(todo.id)}>{todo.text}</span>
             <button className="delete" onClick={() => deleteTodo(todo.id)}>
               Delete
             </button>

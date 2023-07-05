@@ -121,6 +121,10 @@ a {
   border-radius: 5px;
 }
 
+.todo-item-text {
+  color: #333;
+}
+
 .todo-item.done {
   text-decoration: line-through;
   opacity: 0.6;
@@ -130,6 +134,7 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 button.delete {
