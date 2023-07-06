@@ -49,6 +49,7 @@ describe('TodoApp', () => {
     fireEvent.click(todoText);
 
     // Check that the todo has been marked as done
-    expect(todoText).toHaveClass('done');
+    const todoItem = todoText.closest('.todo-item');
+    expect(todoItem).toHaveClass('done');
   });
 });
